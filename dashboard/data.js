@@ -1,3 +1,6 @@
+        { "id": "System", "label": "AI System", "group": "Entity", "level": 0, "desc": "Integrated ecosystem of models, tools, and agents functioning as a cohesive unit." },
+        { "id": "Agent", "label": "Autonomous Agent", "group": "Entity", "level": 1, "desc": "A software entity capable of perceiving its environment and acting upon it to achieve goals." },
+        { "id": "Orchestrator", "label": "Orchestrator Agent", "group": "Entity", "level": 2, "desc": "High-level planner that breaks down complex tasks and delegates them to worker agents." },
 // nodes 배열에 추가
 { id: "Agentic Reasoning", group: "Framework", level: 1 },
 { id: "Multi-Agent Orchestration", group: "Framework", level: 2 },
