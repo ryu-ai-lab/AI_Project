@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent & MCP Ontology Dashboard (2026)</title>
+    <!-- Use Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Load D3.js V7 from CDN -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>AI Agent & MCP Ecosystem <span class="badge">2026 Tech Trend</span></h1>
+            <p>Interactive Ontology Visualization</p>
+        </header>
+        
+        <main class="visualization-area">
+            <div id="graph-container"></div>
+            
+            <aside class="info-panel" id="infoPanel">
+                <div class="panel-header">
+                    <h2>Entity Details</h2>
+                    <span class="close-btn" onclick="document.getElementById('infoPanel').classList.remove('active')">&times;</span>
+                </div>
+                <div id="details-content">
+                    <p class="placeholder-text">Hover over or click a node to explore relationships.</p>
+                </div>
+            </aside>
+        </main>
+
+        <footer class="dashboard-footer">
+            <div class="legend">
+                <div class="legend-item"><span class="dot entity"></span> Entity</div>
+                <div class="legend-item"><span class="dot governance"></span> Governance</div>
+                <div class="legend-item"><span class="dot infrastructure"></span> Infrastructure</div>
+                <div class="legend-item"><span class="dot resource"></span> Resource</div>
+            </div>
+            <div class="instructions">
+                Drag to move • Scroll to zoom • Click for details
+            </div>
+        </footer>
+    </div>
+    
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

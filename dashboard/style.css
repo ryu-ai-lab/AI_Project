@@ -1,0 +1,279 @@
+:root {
+    --bg-dark: #0f172a;
+    --bg-gradient: radial-gradient(circle at top left, #1e293b, #0f172a);
+    --glass-bg: rgba(30, 41, 59, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-blue: #38bdf8;
+
+    --color-entity: #60a5fa;
+    /* Blue */
+    --color-governance: #f87171;
+    /* Red */
+    --color-infrastructure: #c084fc;
+    /* Purple */
+    --color-resource: #fbbf24;
+    /* Amber */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg-dark);
+    background-image:
+        radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+    color: var(--text-primary);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.glass-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    gap: 15px;
+}
+
+/* Header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 10;
+}
+
+.dashboard-header h1 {
+    font-size: 1.8rem;
+    font-weight: 200;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.dashboard-header .highlight {
+    font-weight: 800;
+    color: var(--accent-blue);
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+.dashboard-header p {
+    margin: 5px 0 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.status-indicator {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status-indicator.online::before {
+    content: '●';
+    margin-right: 5px;
+}
+
+/* Glass Panels */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: var(--glass-shadow);
+}
+
+/* Main Content */
+.content-area {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#graph-wrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+/* Sidebar */
+.info-sidebar {
+    width: 350px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    bottom: 20px;
+    /* Stretch to fill vertically relative to content area if positioned absolute, or use flex */
+    /* Changed to absolute positioning within main to float over graph or sit next to it. Let's sit next to it in flex, or float over. 
+       If flex, it pushes graph. User wants "modern", floating panels are modern. */
+    height: auto;
+    padding: 25px;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-sidebar.hidden {
+    transform: translateX(120%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 15px;
+}
+
+.panel-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--text-primary);
+}
+
+#close-panel-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+#close-panel-btn:hover {
+    color: var(--text-primary);
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+#node-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+/* Footer & Legend */
+.dashboard-footer {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.legend-container {
+    display: flex;
+    gap: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px currentColor;
+    /* Generic glow, specific below */
+}
+
+.dot.entity {
+    background-color: var(--color-entity);
+    color: var(--color-entity);
+}
+
+.dot.governance {
+    background-color: var(--color-governance);
+    color: var(--color-governance);
+}
+
+.dot.infrastructure {
+    background-color: var(--color-infrastructure);
+    color: var(--color-infrastructure);
+}
+
+.dot.resource {
+    background-color: var(--color-resource);
+    color: var(--color-resource);
+}
+
+.credits {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* D3 Graph Elements */
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+.link {
+    stroke: #475569;
+    stroke-opacity: 0.4;
+    transition: stroke-width 0.3s;
+}
+
+.node circle {
+    stroke: #fff;
+    stroke-width: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.node:hover circle {
+    stroke: rgba(255, 255, 255, 0.8);
+    stroke-width: 3px;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+.node text {
+    font-family: 'Outfit', sans-serif;
+    pointer-events: none;
+    font-size: 12px;
+    fill: #e2e8f0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    opacity: 0.8;
+}
+
+.node:hover text {
+    font-weight: 700;
+    opacity: 1;
+    font-size: 14px;
+}
