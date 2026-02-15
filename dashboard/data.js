@@ -1,20 +1,17 @@
 const data = {
     nodes: [
-        // --- 기존 노드 (AI Agent Ontology 2026 기반) ---
-        { id: "Human User", group: "Entity", level: 1 },
-        { id: "Orchestrator Agent", group: "Entity", level: 1 },
-        { id: "Knowledge/Graph DB", group: "Resource", level: 2 },
-        { id: "Unstructured Data", group: "Resource", level: 3 },
-        { id: "Semantic/NER/NLP Utils", group: "Resource", level: 3 },
-        { id: "MCP Servers", group: "Infrastructure", level: 2 },
-        { id: "Worker Agent", group: "Entity", level: 2 },
-        { id: "Ontology Model", group: "Infrastructure", level: 3 },
-        { id: "Control Dashboard", group: "Infrastructure", level: 2 },
-        { id: "AI System", group: "Entity", level: 1 },
-        { id: "Autonomous UI Agent", group: "Entity", level: 3 },
-        { id: "Governance Policy", group: "Governance", level: 2 },
+        // --- 기존 기본 노드 ---
+        { id: "AI System", group: "Core", level: 1 },
+        { id: "Human User", group: "User", level: 1 },
+        { id: "Ontology Model", group: "Core", level: 2 },
+        { id: "MCP Server", group: "Infrastructure", level: 2 },
+        { id: "Knowledge Center DB", group: "Infrastructure", level: 2 },
+        { id: "Inference Agent", group: "Agent", level: 2 },
+        { id: "Control Dashboard", group: "Interface", level: 2 },
+        { id: "Security/Policy", group: "Governance", level: 2 },
+        { id: "Unstructured Data", group: "Resource", level: 2 },
 
-        // --- 새롭게 추가된 기술 키워드 (2026-02-16 보고) ---
+        // --- 신규 트렌드 노드 추가 ---
         { id: "Agentic Reasoning", group: "Framework", level: 1 },
         { id: "Multi-Agent Orchestration", group: "Framework", level: 2 },
         { id: "Agentic RAG", group: "Application", level: 1 },
@@ -24,19 +21,16 @@ const data = {
     ],
     links: [
         // --- 기존 관계 ---
-        { source: "Human User", target: "Orchestrator Agent", value: 2 },
-        { source: "Orchestrator Agent", target: "Knowledge/Graph DB", value: 1 },
-        { source: "Knowledge/Graph DB", target: "Unstructured Data", value: 1 },
-        { source: "Knowledge/Graph DB", target: "Semantic/NER/NLP Utils", value: 1 },
-        { source: "Orchestrator Agent", target: "MCP Servers", value: 1 },
-        { source: "Orchestrator Agent", target: "Worker Agent", value: 1 },
-        { source: "Knowledge/Graph DB", target: "Ontology Model", value: 1 },
-        { source: "Orchestrator Agent", target: "Control Dashboard", value: 1 },
-        { source: "Orchestrator Agent", target: "AI System", value: 2 },
-        { source: "Worker Agent", target: "Autonomous UI Agent", value: 1 },
-        { source: "AI System", target: "Governance Policy", value: 1 },
+        { source: "Human User", target: "AI System", value: 2 },
+        { source: "AI System", target: "Ontology Model", value: 1 },
+        { source: "AI System", target: "MCP Server", value: 1 },
+        { source: "AI System", target: "Knowledge Center DB", value: 1 },
+        { source: "AI System", target: "Inference Agent", value: 1 },
+        { source: "AI System", target: "Control Dashboard", value: 1 },
+        { source: "AI System", target: "Security/Policy", value: 1 },
+        { source: "AI System", target: "Unstructured Data", value: 1 },
 
-        // --- 신규 기술 관계 연결 ---
+        // --- 신규 관계 추가 ---
         { source: "AI System", target: "Agentic Reasoning", value: 2 },
         { source: "Agentic Reasoning", target: "Multi-Agent Orchestration", value: 1 },
         { source: "Agentic Reasoning", target: "Agentic RAG", value: 1 },
