@@ -1,3 +1,18 @@
+// nodes 배열에 추가
+{ id: "Agentic Reasoning", group: "Framework", level: 1 },
+{ id: "Multi-Agent Orchestration", group: "Framework", level: 2 },
+{ id: "Agentic RAG", group: "Application", level: 1 },
+{ id: "SLM (Small Language Models)", group: "On-device", level: 1 },
+{ id: "Hybrid Computing", group: "On-device", level: 2 },
+{ id: "Domain-Specific AI", group: "Application", level: 2 },
+
+// links 배열에 추가
+{ source: "AI System", target: "Agentic Reasoning", value: 2 },
+{ source: "Agentic Reasoning", target: "Multi-Agent Orchestration", value: 1 },
+{ source: "Agentic Reasoning", target: "Agentic RAG", value: 1 },
+{ source: "AI System", target: "SLM (Small Language Models)", value: 2 },
+{ source: "SLM (Small Language Models)", target: "Hybrid Computing", value: 1 },
+{ source: "Agentic RAG", target: "Domain-Specific AI", value: 1 }
 const graphData = {
     "nodes": [
         // Entities
