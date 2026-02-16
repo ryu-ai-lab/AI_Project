@@ -1,5 +1,4 @@
 const nodes = [
-    // --- 기존 기본 노드 ---
     { id: "AI System", group: "Core", level: 1 },
     { id: "Human User", group: "User", level: 1 },
     { id: "Ontology Model", group: "Core", level: 2 },
@@ -9,8 +8,6 @@ const nodes = [
     { id: "Control Dashboard", group: "Interface", level: 2 },
     { id: "Security/Policy", group: "Governance", level: 2 },
     { id: "Unstructured Data", group: "Resource", level: 2 },
-
-    // --- 신규 트렌드 노드 ---
     { id: "Agentic Reasoning", group: "Framework", level: 1 },
     { id: "Multi-Agent Orchestration", group: "Framework", level: 2 },
     { id: "Agentic RAG", group: "Application", level: 1 },
@@ -20,7 +17,6 @@ const nodes = [
 ];
 
 const links = [
-    // --- 기존 관계 ---
     { source: "Human User", target: "AI System", value: 2 },
     { source: "AI System", target: "Ontology Model", value: 1 },
     { source: "AI System", target: "MCP Server", value: 1 },
@@ -29,8 +25,6 @@ const links = [
     { source: "AI System", target: "Control Dashboard", value: 1 },
     { source: "AI System", target: "Security/Policy", value: 1 },
     { source: "AI System", target: "Unstructured Data", value: 1 },
-
-    // --- 신규 관계 ---
     { source: "AI System", target: "Agentic Reasoning", value: 2 },
     { source: "Agentic Reasoning", target: "Multi-Agent Orchestration", value: 1 },
     { source: "Agentic Reasoning", target: "Agentic RAG", value: 1 },
