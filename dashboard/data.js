@@ -1,4 +1,5 @@
-const nodes = [
+// 개별 변수 선언 (가장 일반적인 방식)
+var nodes = [
     { id: "AI System", group: "Core", level: 1 },
     { id: "Human User", group: "User", level: 1 },
     { id: "Ontology Model", group: "Core", level: 2 },
@@ -16,7 +17,7 @@ const nodes = [
     { id: "Domain-Specific AI", group: "Application", level: 2 }
 ];
 
-const links = [
+var links = [
     { source: "Human User", target: "AI System", value: 2 },
     { source: "AI System", target: "Ontology Model", value: 1 },
     { source: "AI System", target: "MCP Server", value: 1 },
@@ -32,3 +33,6 @@ const links = [
     { source: "SLM (Small Language Models)", target: "Hybrid Computing", value: 1 },
     { source: "Agentic RAG", target: "Domain-Specific AI", value: 1 }
 ];
+
+// 통합 객체 선언 (일부 템플릿 대응용)
+var data = { nodes: nodes, links: links };
