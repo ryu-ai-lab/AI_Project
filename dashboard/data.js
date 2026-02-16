@@ -20,11 +20,12 @@ const graphData = {
         // Resources
         { "id": "Tool", "label": "External Tool / API", "group": "Resource", "level": 3, "desc": "Executable functions or external APIs that agents can invoke to perform actions." },
         { "id": "Database", "label": "Knowledge Graph / DB", "group": "Resource", "level": 3, "desc": "Structured data sources providing long-term memory and context to the system." },
-        { "id": "Document", "label": "Unstructured Data", "group": "Resource", "level": 3, "desc": "Documents and files that agents can read for context retrieval." }
-        // nodes 배열 끝부분( ] 바로 앞)에 추가
-        { id: "Agentic Reasoning", group: "Framework", level: 1 },
-        { id: "Agentic RAG", group: "Application", level: 1 },
-        { id: "SLM (Small Language Models)", group: "On-device", level: 1 },
+        { "id": "Document", "label": "Unstructured Data", "group": "Resource", "level": 3, "desc": "Documents and files that agents can read for context retrieval." }, // 쉼표 추가됨
+        
+        // 추가된 노드들
+        { "id": "Agentic Reasoning", "label": "Agentic Reasoning", "group": "Framework", "level": 1, "desc": "Advanced reasoning patterns for LLMs." },
+        { "id": "Agentic RAG", "label": "Agentic RAG", "group": "Application", "level": 1, "desc": "Autonomous retrieval-augmented generation." },
+        { "id": "SLM", "label": "SLM (Small Language Models)", "group": "On-device", "level": 1, "desc": "Efficient models for edge computing." }
     ],
     "links": [
         // Entity Relationships
@@ -47,11 +48,11 @@ const graphData = {
 
         // Execution
         { "source": "Worker", "target": "Tool", "type": "executes", "desc": "Performs action" },
-        { "source": "Worker", "target": "Database", "type": "queries", "desc": "Retrieves info" }
+        { "source": "Worker", "target": "Database", "type": "queries", "desc": "Retrieves info" }, // 쉼표 추가됨
         
-        // links 배열 끝부분( ] 바로 앞)에 추가
-        { source: "AI System", target: "Agentic Reasoning", value: 2 },
-        { source: "AI System", target: "Agentic RAG", value: 1 },
-        { source: "AI System", target: "SLM (Small Language Models)", value: 2 }
+        // 추가된 관계들 (source를 'System'으로 수정)
+        { "source": "System", "target": "Agentic Reasoning", "type": "incorporates", "desc": "Advanced reasoning" },
+        { "source": "System", "target": "Agentic RAG", "type": "implements", "desc": "Smart retrieval" },
+        { "source": "System", "target": "SLM", "type": "deploys", "desc": "Edge optimization" }
     ]
 };
