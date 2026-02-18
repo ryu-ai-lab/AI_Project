@@ -1,61 +1,66 @@
 /**
- * Knowledge Graph Ontology Data (Updated: 2026-02-18)
- * Refined via NotebookLM Reasoning
+ * Knowledge Graph Ontology Data (Updated: 2026-02-19)
+ * Refined via NotebookLM Contextual Reasoning
  */
 const graphData = {
     "nodes": [
         // =====================
-        // 1. Core Systems & Governance
+        // 1. Core Entities & Humans
         // =====================
         { "id": "System", "label": "AI System", "group": "Entity", "level": 0, "desc": "Integrated ecosystem of models, tools, and agents functioning as a cohesive unit." },
-        { "id": "User", "label": "Human-in-the-Loop", "group": "Entity", "level": 0, "desc": "Strategic human supervisor managing exception handling and ethical oversight." },
-        { "id": "Ontology", "label": "Ontology Model", "group": "Governance", "level": 1, "desc": "Semantic firewall defining valid entities and relationship logic." },
-        { "id": "Policy", "label": "Governance-as-Code", "group": "Governance", "level": 2, "desc": "Automated, programmable rules governing agent autonomy limits." },
+        { "id": "User", "label": "Human Supervisor", "group": "Entity", "level": 0, "desc": "The human operator providing strategic intent and final validation." },
+        { "id": "Agent", "label": "Autonomous Agent", "group": "Entity", "level": 1, "desc": "Goal-oriented software entity capable of independent planning and tool use." },
 
         // =====================
-        // 2. Agentic Evolution (2026 Mainstream)
+        // 2. Intelligence & Reasoning (Infra)
         // =====================
-        { "id": "Agent", "label": "Autonomous Agent", "group": "Entity", "level": 1, "desc": "Goal-oriented entity moving from assistive tools to autonomous decision engines." },
-        { "id": "MAO", "label": "Multi-Agent Orchestration", "group": "Framework", "level": 1, "desc": "Mandatory architecture for coordinating specialized parallel agent teams." },
-        { "id": "Orchestrator", "label": "Planner Agent", "group": "Entity", "level": 2, "desc": "Coordinator that plans, sequences, and supervises distributed execution." },
-        { "id": "Self_Verification", "label": "Self-Verification", "group": "Framework", "level": 2, "desc": "Internal feedback loops allowing agents to autonomously verify and correct errors." },
-        
-        // =====================
-        // 3. Infrastructure & On-device AI
-        // =====================
-        { "id": "LLM", "label": "Reasoning Engine (LLM)", "group": "Infrastructure", "level": 1, "desc": "The foundational cognitive layer, evolving towards deep reasoning and self-evolution." },
-        { "id": "SLM", "label": "Small Models (SLM)", "group": "Infrastructure", "level": 1, "desc": "Task-specific models optimized for high-efficiency edge environments." },
-        { "id": "LiteRT", "label": "LiteRT Framework", "group": "Infrastructure", "level": 2, "desc": "Google's standard for 1.4x faster on-device GPU inference (v2026)." },
-        { "id": "Protocol", "label": "Model Context Protocol", "group": "Infrastructure", "level": 1, "desc": "Standardized 'Agent Internet' protocol for connecting models to tools." },
+        { "id": "LLM", "label": "Reasoning Core (LLM)", "group": "Infrastructure", "level": 1, "desc": "The primary cognitive engine; shifting from static inference to iterative reasoning." },
+        { "id": "Deep_Think", "label": "Gemini Deep Think", "group": "Infrastructure", "level": 1, "desc": "Advanced reasoning model specialized in complex scientific and mathematical discovery." },
+        { "id": "LiteRT", "label": "LiteRT Runtime", "group": "Infrastructure", "level": 2, "desc": "On-device AI runtime for 1.4x faster GPU-accelerated inference (v2026)." },
+        { "id": "Protocol", "label": "MCP (Model Context Protocol)", "group": "Infrastructure", "level": 1, "desc": "Universal standard for connecting AI agents to local and remote data/tools." },
 
         // =====================
-        // 4. Resources & Applications
+        // 3. Frameworks & Orchestration
         // =====================
-        { "id": "Agentic_RAG", "label": "Agentic RAG", "group": "Application", "level": 1, "desc": "Autonomous retrieval-augmented generation with adaptive routing." },
-        { "id": "AI_Wallet", "label": "Agentic Digital Wallet", "group": "Resource", "level": 3, "desc": "Autonomous payment rails for agent-to-service transactions." },
-        { "id": "Tool", "label": "External Tool / API", "group": "Resource", "level": 3, "desc": "Executable functions or APIs invoked via standardized protocols." },
-        { "id": "Database", "label": "Vector/Graph DB", "group": "Resource", "level": 3, "desc": "Structured and unstructured long-term memory sources." }
+        { "id": "MAO", "label": "Multi-Agent Orchestration", "group": "Framework", "level": 1, "desc": "Architecture for managing collaborative agent teams with distinct roles." },
+        { "id": "Orchestrator", "label": "Planner Agent", "group": "Entity", "level": 2, "desc": "Hierarchical coordinator that decomposes tasks and delegates to specialized workers." },
+        { "id": "Agentic_Reasoning", "label": "Agentic Reasoning", "group": "Framework", "level": 1, "desc": "Advanced iterative logic patterns including reflection and self-correction." },
+
+        // =====================
+        // 4. Governance & Semantic Security
+        // =====================
+        { "id": "Ontology", "label": "Ontology Model", "group": "Governance", "level": 1, "desc": "The semantic firewall defining the rules of reality for the agent ecosystem." },
+        { "id": "Command_Center", "label": "Agentic Command Center", "group": "Governance", "level": 1, "desc": "Unified dashboard for monitoring, auditing, and controlling federated agents." },
+        { "id": "Policy", "label": "Governance-as-Code", "group": "Governance", "level": 2, "desc": "Programmable guardrails that enforce ethical and operational constraints." },
+
+        // =====================
+        // 5. Resources & Knowledge
+        // =====================
+        { "id": "Database", "label": "Vector/Graph DB", "group": "Resource", "level": 3, "desc": "Memory layer providing long-term context and structured knowledge." },
+        { "id": "Tool", "label": "MCP-Enabled Tool", "group": "Resource", "level": 3, "desc": "Dynamic executable functions exposed via the Model Context Protocol." },
+        { "id": "AI_Wallet", "label": "Agentic Digital Wallet", "group": "Resource", "level": 3, "desc": "Autonomous payment rails allowing agents to perform economic transactions." }
     ],
     "links": [
-        // Governance & Strategic Loops
-        { "source": "User", "target": "Orchestrator", "type": "supervises", "desc": "Strategic oversight" },
-        { "source": "Policy", "target": "MAO", "type": "governs", "desc": "Boundary definition" },
-        { "source": "Ontology", "target": "Agent", "type": "validates", "desc": "Semantic alignment" },
+        // System & Agent Relationships
+        { "source": "System", "target": "Agent", "type": "contains", "desc": "Composition" },
+        { "source": "User", "target": "Command_Center", "type": "monitors", "desc": "Operational oversight" },
+        { "source": "Agent", "target": "MAO", "type": "scales_via", "desc": "Collaboration" },
+        { "source": "MAO", "target": "Orchestrator", "type": "implements", "desc": "Coordination layer" },
 
-        // Orchestration & Agency
-        { "source": "System", "target": "Agent", "type": "contains", "desc": "Composed of" },
-        { "source": "Agent", "target": "MAO", "type": "scales_via", "desc": "Team-based execution" },
-        { "source": "MAO", "target": "Orchestrator", "type": "implements", "desc": "Coordinator role" },
-        { "source": "Agent", "target": "Self_Verification", "type": "implements", "desc": "Error correction" },
+        // Reasoning & Inference Flows
+        { "source": "Agent", "target": "LLM", "type": "thinks_with", "desc": "Cognitive processing" },
+        { "source": "LLM", "target": "Deep_Think", "type": "evolves_into", "desc": "Deep reasoning" },
+        { "source": "LLM", "target": "LiteRT", "type": "deploys_on", "desc": "Edge inference" },
+        { "source": "Agent", "target": "Agentic_Reasoning", "type": "incorporates", "desc": "Advanced logic" },
 
-        // Infrastructure & Physical Intelligence
-        { "source": "LLM", "target": "SLM", "type": "distills_into", "desc": "Edge optimization" },
-        { "source": "SLM", "target": "LiteRT", "type": "deploys_on", "desc": "GPU-accelerated inference" },
-        { "source": "Agent", "target": "Protocol", "type": "speaks", "desc": "Standardized connection" },
-        { "source": "Protocol", "target": "Tool", "type": "accesses", "desc": "Unified tool use" },
+        // Connectivity & Governance
+        { "source": "Agent", "target": "Protocol", "type": "speaks", "desc": "Standard communication" },
+        { "source": "Protocol", "target": "Tool", "type": "accesses", "desc": "Dynamic tool use" },
+        { "source": "Ontology", "target": "Command_Center", "type": "validates", "desc": "Semantic safety" },
+        { "source": "Policy", "target": "Command_Center", "type": "enforces", "desc": "Guardrail application" },
 
-        // Economic & Memory Flows
-        { "source": "Agent", "target": "AI_Wallet", "type": "authorizes", "desc": "Autonomous commerce" },
-        { "source": "Agentic_RAG", "target": "Database", "type": "queries", "desc": "Adaptive retrieval" }
+        // Resources & Agency
+        { "source": "Agent", "target": "AI_Wallet", "type": "authorizes", "desc": "Economic agency" },
+        { "source": "Agent", "target": "Database", "type": "queries", "desc": "Memory retrieval" }
     ]
 };
