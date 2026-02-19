@@ -1,5 +1,5 @@
 /**
- * Knowledge Graph Ontology Data (Updated: 2026-02-19)
+ * Knowledge Graph Ontology Data (Updated: 2026-02-20)
  * Refined via NotebookLM Contextual Reasoning
  */
 const graphData = {
