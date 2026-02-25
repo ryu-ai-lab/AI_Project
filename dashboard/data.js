@@ -1,64 +1,65 @@
 /**
- * Knowledge Graph Ontology Data (Updated: 2026-02-25)
- * Focus: Logic Deconstruction, Vertical AIoT, and On-Device Optimization
+ * Knowledge Graph Ontology Data (Updated: 2026-02-26)
+ * Refined by AI System Architect & Knowledge Engineer
  */
 const graphData = {
     "nodes": [
         // =====================
-        // 1. Core Reasoning & Governance (Phase 0-5)
+        // 1. Core Reasoning & Governance
         // =====================
         { "id": "System", "label": "AI System", "group": "Entity", "level": 0, "desc": "Integrated ecosystem of models, tools, and agents functioning as a cohesive unit." },
-        { "id": "User", "label": "Strategic Supervisor", "group": "Entity", "level": 0, "desc": "AI의 논리를 해체하고 재구성하여 최종 의사결정을 승인하는 인간 관리자." },
-        { "id": "Zero_Base_Reasoning", "label": "Zero-base Reasoning", "group": "Governance", "level": 1, "desc": "외부 지식 개입을 차단하고 오직 원본 데이터만을 독립적으로 검증하는 억제장치." },
-        { "id": "Claim_Evidence_Map", "label": "Claim-Evidence Map", "group": "Governance", "level": 2, "desc": "주장과 원문 근거를 대조하여 논리적 취약점과 증거 밀도를 스캔하는 검증 매트릭스." },
+        { "id": "User", "label": "Strategic Supervisor", "group": "Entity", "level": 0, "desc": "AI의 논리를 해체하고 재구성하여 최종 판단 및 실행을 승인하는 인간 관리자." },
+        { "id": "Logic_Deconstruction_OS", "label": "Logic Deconstruction OS", "group": "Governance", "level": 1, "desc": "Zero-base 추론과 주장-증거 맵을 통해 문서의 논리적 공백과 편향을 적발하는 판단 시스템." },
+        { "id": "Ontology", "label": "Ontology Model", "group": "Governance", "level": 1, "desc": "에이전트 생태계의 유효한 객체와 관계를 규정하여 환각을 차단하는 시맨틱 방화벽." },
 
         // =====================
         // 2. Intelligence & Infrastructure
         // =====================
-        { "id": "LLM", "label": "Reasoning Core (LLM)", "group": "Infrastructure", "level": 1, "desc": "Primary cognitive engine evolving toward deep iterative reasoning and self-evolution." },
-        { "id": "LiteRT", "label": "LiteRT Framework", "group": "Infrastructure", "level": 2, "desc": "임베디드 장치에서 고성능 추론을 지원하는 구글의 표준 런타임이자 하드웨어 추상화 계층." },
-        { "id": "NPU_HA", "label": "NPU Hardware Abstraction", "group": "Infrastructure", "level": 2, "desc": "Hailo-8/10H 등 전용 가속기의 성능을 소프트웨어 스택으로 직접 전달하는 물리 제어 레이어." },
-        { "id": "MCP_Server", "label": "MCP Server", "group": "Infrastructure", "level": 2, "desc": "Model Context Protocol을 통해 에이전트와 기업 데이터/장치를 연결하는 표준화된 통로." },
+        { "id": "LLM", "label": "Reasoning Core (LLM)", "group": "Infrastructure", "level": 1, "desc": "심층적인 반복 추론 및 자가 학습을 통해 지능을 확장하는 핵심 인지 엔진." },
+        { "id": "Self_Evolving_AI", "label": "Self-Evolving AI", "group": "Infrastructure", "level": 1, "desc": "실행 로그를 분석하여 자신의 아키텍처와 추론 경로를 스스로 최적화하는 진화형 시스템." },
+        { "id": "LiteRT", "label": "LiteRT Framework", "group": "Infrastructure", "level": 2, "desc": "임베디드 장치에서 GPU/NPU 가속을 통해 밀리초 단위 추론을 지원하는 구글의 표준 런타임." },
+        { "id": "NPU_HA", "label": "NPU Hardware Abstraction", "group": "Infrastructure", "level": 2, "desc": "Hailo-8/10H 등 전용 가속기의 성능을 소프트웨어 계층으로 직결하는 물리 제어 레이어." },
 
         // =====================
         // 3. Frameworks & Multi-Agent Systems
         // =====================
-        { "id": "MAO", "label": "Multi-Agent Orchestration", "group": "Framework", "level": 1, "desc": "분업화된 에이전트 팀을 조율하여 복잡한 비즈니스 및 산업 공정을 처리하는 프레임워크." },
-        { "id": "Self_Evolving_AI", "label": "Self-Evolving AI", "group": "Framework", "level": 2, "desc": "사용 패턴 및 실행 로그를 분석하여 자신의 추론 경로를 스스로 최적화하는 시스템." },
-        { "id": "MAPE_K", "label": "MAPE-K Framework", "group": "Framework", "level": 2, "desc": "자율 제어 루프를 통해 시스템 상태를 감시하고 지식 기반 결정을 내리는 표준 아키텍처." },
+        { "id": "MAO", "label": "Multi-Agent Orchestration", "group": "Framework", "level": 1, "desc": "분업화된 전문 에이전트 팀을 조율하여 복잡한 비즈니스 및 산업 프로세스를 완성하는 아키텍처." },
+        { "id": "MAPE_K", "label": "MAPE-K Loop", "group": "Framework", "level": 2, "desc": "Monitor-Analyze-Plan-Execute 루프를 통해 자율적 시스템 제어를 수행하는 표준 프레임워크." },
+        { "id": "MCP_Server", "label": "MCP Server", "group": "Infrastructure", "level": 2, "desc": "Model Context Protocol을 구현하여 에이전트와 기업 데이터 및 물리 장치를 연결하는 관문." },
 
         // =====================
         // 4. Vertical AI Applications (AIoT)
         // =====================
-        { "id": "Proactive_Response", "label": "Proactive Response SOP", "group": "Application", "level": 3, "desc": "사고 발생 전 징후를 감지하여 엣지에서 즉각적인 실행 지침을 생성하는 사전 예방형 대응 체계." },
-        { "id": "Edge_Digital_Twin", "label": "Edge Digital Twin", "group": "Application", "level": 3, "desc": "물리 장비의 실시간 상태를 엣지에서 동기화하여 공정 지연 및 오류를 최소화하는 복제 모델." },
-        { "id": "Predictive_Safety", "label": "Predictive Safety Analysis", "group": "Application", "level": 3, "desc": "산업 현장의 비정형 데이터를 실시간 스캔하여 잠재적 위험 요소를 수치화하고 경고하는 시스템." },
+        { "id": "Proactive_Response_SOP", "label": "Proactive Response SOP", "group": "Application", "level": 3, "desc": "사고 징후 감지 시 엣지에서 즉각적인 자율 실행 지침을 생성하여 사고를 예방하는 대응 체계." },
+        { "id": "Edge_Digital_Twin", "label": "Edge Digital Twin", "group": "Application", "level": 3, "desc": "OT 데이터를 엣지에서 실시간 동기화하여 물리 장비의 상태를 최적화하는 디지털 복제 모델." },
+        { "id": "Predictive_Safety_Agent", "label": "Predictive Safety Agent", "group": "Application", "level": 3, "desc": "산업 현장의 비정형 데이터를 스캔하여 잠재적 위험 요소를 실시간으로 식별하고 경고하는 에이전트." },
 
         // =====================
-        // 5. Semantic Guardrails
+        // 5. Operational Control
         // =====================
-        { "id": "Ontology", "label": "Ontology Model", "group": "Governance", "level": 1, "desc": "에이전트 생태계의 유효한 객체와 논리적 관계를 규정하는 시맨틱 방화벽." },
-        { "id": "Command_Center", "label": "Agentic Command Center", "group": "Governance", "level": 1, "desc": "분산된 에이전트 인력을 실시간 모니터링하고 중앙 거버넌스를 적용하는 제어 평면." }
+        { "id": "Command_Center", "label": "Agentic Command Center", "group": "Governance", "level": 1, "desc": "분산된 에이전트 인력을 모니터링하고 중앙 거버넌스를 적용하는 통합 제어 평면." },
+        { "id": "Policy", "label": "Governance-as-Code", "group": "Governance", "level": 2, "desc": "에이전트의 권한과 행동 범위를 코드 형태로 규정하여 강제하는 실행 정책." }
     ],
     "links": [
-        // Governance & Deconstruction Flows
-        { "source": "User", "target": "Zero_Base_Reasoning", "type": "enforces", "desc": "Independent verification" },
-        { "source": "Zero_Base_Reasoning", "target": "Claim_Evidence_Map", "type": "validates", "desc": "Evidence scanning" },
-        { "source": "Claim_Evidence_Map", "target": "Ontology", "type": "updates", "desc": "Refining world rules" },
+        // Governance & Reasoning Flows
+        { "source": "User", "target": "Logic_Deconstruction_OS", "type": "enforces", "desc": "Independent verification" },
+        { "source": "Logic_Deconstruction_OS", "target": "Ontology", "type": "validates", "desc": "Refining world rules" },
+        { "source": "Ontology", "target": "Command_Center", "type": "informs", "desc": "Semantic safety" },
 
-        // Infrastructure Flows
+        // Infrastructure & Acceleration Flows
         { "source": "LLM", "target": "Self_Evolving_AI", "type": "evolves_into", "desc": "Autonomous improvement" },
         { "source": "LLM", "target": "LiteRT", "type": "deploys_on", "desc": "Edge deployment" },
         { "source": "LiteRT", "target": "NPU_HA", "type": "utilizes", "desc": "Hardware acceleration" },
-        { "source": "Agent", "target": "MCP_Server", "type": "connects_via", "desc": "Data interoperability" },
+        { "source": "Agent", "target": "MCP_Server", "type": "connects_via", "desc": "Standardized interoperability" },
 
         // Vertical Application Links
-        { "source": "System", "target": "Proactive_Response", "type": "executes", "desc": "Action blueprinting" },
-        { "source": "MAPE_K", "target": "Edge_Digital_Twin", "type": "manages", "desc": "Real-time sync" },
-        { "source": "NPU_HA", "target": "Predictive_Safety", "type": "powers", "desc": "Low-latency hazard scan" },
-        { "source": "MCP_Server", "target": "Edge_Digital_Twin", "type": "enables", "desc": "OT data flow" },
+        { "source": "MAO", "target": "MAPE_K", "type": "implements", "desc": "Control logic" },
+        { "source": "MAPE_K", "target": "Proactive_Response_SOP", "type": "triggers", "desc": "Immediate action" },
+        { "source": "NPU_HA", "target": "Predictive_Safety_Agent", "type": "powers", "desc": "Real-time hazard detection" },
+        { "source": "MCP_Server", "target": "Edge_Digital_Twin", "type": "enables", "desc": "OT data integration" },
 
-        // Final Control
+        // Final Control & Reporting
+        { "source": "Policy", "target": "Command_Center", "type": "enforces", "desc": "Constraint application" },
         { "source": "Command_Center", "target": "User", "type": "reports_to", "desc": "Final decision approval" }
     ]
 };
